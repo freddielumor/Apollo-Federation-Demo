@@ -1,0 +1,32 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -k npm:dev:*",
+    "dev:people": "nodemon -r esm ./people/index.js",
+    "dev:films": "nodemon -r esm ./films/index.js",
+    "dev:gateway": "wait-on tcp:4001 && nodemon -r esm ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freddielumor/Apollo-Federation-Demo.git"
+  },
+  "author": "Freddie Lumor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freddielumor/Apollo-Federation-Demo/issues"
+  },
+  "homepage": "https://github.com/freddielumor/Apollo-Federation-Demo#readme",
+  "dependencies": {
+    "@apollo/federation": "^0.13.2",
+    "@apollo/gateway": "^0.13.2",
+    "apollo-server": "^2.14.2",
+    "concurrently": "^5.1.0",
+    "esm": "^3.2.25",
+    "graphql": "^15.0.0",
+    "nodemon": "^2.0.2",
+    "wait-on": "^4.0.1"
+  }
+}
